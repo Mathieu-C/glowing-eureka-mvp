@@ -1,7 +1,7 @@
 .review-modal {
   background: white;
   display: none;
-  height: 100vh;
+  height: 100%;
   padding: 24px;
   position: absolute;
   top: 0;
