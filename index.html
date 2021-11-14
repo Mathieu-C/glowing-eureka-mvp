@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Minimalist Entrepreneur</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <h1>The Minimalist Entrepreneur</h1>
+
+    <section class="summary">
+      <div class="summary__rating">
+        <div id="summary-score" class="summary__score">–</div>
+        <div class="rating">
+          <div id="summary-score-star" class="rating__star"></div>
+        </div>
+      </div>
+      <button>Add review</button>
+    </section>
+
+    <section id="reviews-container">
+      <h2>Reviews</h2>
+    </section>
+
+    <section id="review-modal" class="review-modal">
+      <h2>What's your rating?</h2>
+      <form id="rating-form" method="post">
+        <fieldset class="rating-form">
+          <legend>Rating</legend>
+          <label aria-label="1 star" class="rating-form__label" for="rating-1">
+            <i class="rating-form__star"></i>
+          </label>
+          <input class="rating-form__input" name="rating" id="rating-1" value="1" type="radio">
+          <label aria-label="2 stars" class="rating-form__label" for="rating-2">
+            <i class="rating-form__star"></i>
+          </label>
+          <input class="rating-form__input" name="rating" id="rating-2" value="2" type="radio">
+          <label aria-label="3 stars" class="rating-form__label" for="rating-3">
+            <i class="rating-form__star"></i>
+          </label>
+          <input class="rating-form__input" name="rating" id="rating-3" value="3" type="radio" checked>
+          <label aria-label="4 stars" class="rating-form__label" for="rating-4">
+            <i class="rating-form__star"></i>
+          </label>
+          <input class="rating-form__input" name="rating" id="rating-4" value="4" type="radio">
+          <label aria-label="5 stars" class="rating-form__label" for="rating-5">
+            <i class="rating-form__star"></i>
+          </label>
+          <input class="rating-form__input" name="rating" id="rating-5" value="5" type="radio">
+        </fieldset>
+        <fieldset>
+          <legend>Review</legend>
+          <textarea required name="body" class="review__textarea" placeholder="Start typing…"></textarea>
+        </fieldset>
+        <button type="submit">Submit review</button>
+      </form>
+    </section>
+  </body>
+</html>
