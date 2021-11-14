@@ -1,3 +1,33 @@
+/* Reviews */
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+}
+
+.review {
+  align-items: center;
+  display: flex;
+  margin: 12px 0;
+  flex-wrap: nowrap;
+}
+
+.review__content {
+  color: #858585;
+  font-weight: 400;
+  margin: 0;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review__content span {
+  color: black;
+  font-weight: 700;
+}
+
+/* Rating */
+
 .rating {
   align-items: center;
   background-image: url("../images/star.svg");
