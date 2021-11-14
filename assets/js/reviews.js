@@ -5,6 +5,15 @@ const summaryStar = document.getElementById("summary-score-star");
 
 let reviews = [];
 
+function escapeHtml(unsafe) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+ }
+
 const renderRating = (rating) => {
   const percentage = 100 / 5 * rating;
   return `
@@ -18,7 +27,7 @@ const renderReview = (review) => {
     <article class="review">
       ${renderRating(review.rating)}
       <p class="review__content">
-        <span aria-label="${review.rating} stars out of 5" role="img">${review.rating}</span>, ${review.body}
+        <span aria-label="${review.rating} stars out of 5" role="img">${review.rating}</span>, ${escapeHtml(review.body)}
       </p>
     </article>
   `;
