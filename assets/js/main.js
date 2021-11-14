@@ -1,3 +1,5 @@
+const API_ROOT = "http://localhost:3000";
+
 const modalContainer = document.getElementById("review-modal");
 
 const toggleModal = () => {
@@ -25,6 +27,7 @@ const handleSubmit = (event) => {
     .then((data) => {
       if (data.status === "SUCCESS") {
         toggleModal();
+        form.reset();
       }
     })
 }
