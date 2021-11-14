@@ -42,6 +42,27 @@ const updateSummary = () => {
   summaryStar.style.width = 100 / 5 * average + "%"
 }
 
+const addReview = (data) => {
+  const review = JSON.parse(data);
+
+  reviews.push(review);
+  renderReview(review);
+
+  updateSummary();
+}
+
+const source = new EventSource(`${API_ROOT}/reviews/live`);
+source.addEventListener('created', function(event) {
+  addReview(event.data);
+});
+
+window.onbeforeunload = freeSource;
+
+function freeSource() {
+  source.close();
+  return null;
+}
+
 fetch(`${API_ROOT}/reviews`)
   .then((res) => res.json())
   .then((res) => populate(res.data));
