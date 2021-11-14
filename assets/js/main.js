@@ -1,10 +1,21 @@
 const API_ROOT = "http://localhost:3000";
 
 const form = document.getElementById("rating-form");
+
+const errorsContainer = document.getElementById("errors");
 const modalContainer = document.getElementById("review-modal");
 
 const toggleModal = () => {
   modalContainer.classList.toggle("review-modal--is-open");
+}
+
+const clearErrors = () => {
+  errors.innerHTML = '';
+}
+
+const setErrors = (errors) => {
+  const result = errors.map((error) => `<li>${error}</li>`);
+  errorsContainer.innerHTML = result.join('');
 }
 
 const handleSubmit = (event) => {
@@ -29,6 +40,8 @@ const handleSubmit = (event) => {
       if (data.status === "SUCCESS") {
         toggleModal();
         form.reset();
+      } else {
+        setErrors(data.errors);
       }
     })
 }
