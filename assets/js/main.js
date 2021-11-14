@@ -1,5 +1,6 @@
 const API_ROOT = "http://localhost:3000";
 
+const form = document.getElementById("rating-form");
 const modalContainer = document.getElementById("review-modal");
 
 const toggleModal = () => {
