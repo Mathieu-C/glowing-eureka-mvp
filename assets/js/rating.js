@@ -1,5 +1,8 @@
 const container = document.getElementById("reviews-container");
 
+const summary = document.getElementById("summary-score");
+const summaryStar = document.getElementById("summary-score-star");
+
 let reviews = [];
 
 const renderRating = (rating) => {
@@ -28,6 +31,15 @@ const renderReviews = () => {
 const populate = (data) => {
   reviews = data;
   renderReviews();
+  updateSummary();
+}
+
+const updateSummary = () => {
+  let average = reviews.reduce((prev, current) => prev + +current.rating, 0) / reviews.length;
+  average = average.toFixed(2);
+
+  summary.innerHTML = average;
+  summaryStar.style.width = 100 / 5 * average + "%"
 }
 
 fetch(`${API_ROOT}/reviews`)
