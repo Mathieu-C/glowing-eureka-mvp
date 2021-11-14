@@ -11,3 +11,46 @@
 .review-modal--is-open {
   display: block;
 }
+
+.rating-form {
+  display: inline-flex;
+}
+
+.rating-form__label {
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.rating-form__star {
+  background-image: url("../images/star-full.svg");
+  background-size: cover;
+  display: block;
+  height: 30px;
+  width: 30px;
+}
+
+.rating-form__input {
+  left: -9999px !important;
+  position: absolute !important;
+}
+
+.rating-form__input:checked ~ .rating-form__label .rating-form__star {
+  background-image: url("../images/star.svg");
+}
+
+.rating-form:hover .rating-form__label .rating-form__star {
+  background-image: url("../images/star-full.svg");
+}
+
+.rating-form__input:hover ~ .rating-form__label .rating-form__star {
+  background-image: url("../images/star.svg");
+}
+
+.review__textarea {
+  border: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  height: 100px;
+  resize: none;
+  width: 100%;
+}
