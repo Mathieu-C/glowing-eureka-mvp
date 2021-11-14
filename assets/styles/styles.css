@@ -38,3 +38,21 @@ button {
   font-weight: 700;
   padding: 8px 24px;
 }
+
+.summary {
+  align-items: center;
+  border-bottom: 1px solid #B9B9B9;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.summary__rating {
+  align-items: center;
+  display: inline-flex;
+}
+
+.summary__score {
+  font-size: 44px;
+  margin-right: 22px;
+}
