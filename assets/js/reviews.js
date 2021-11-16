@@ -44,6 +44,8 @@ const populate = (data) => {
 }
 
 const updateSummary = () => {
+  if (reviews.length === 0) return;
+
   let average = reviews.reduce((prev, current) => prev + +current.rating, 0) / reviews.length;
   average = average.toFixed(2);
 
