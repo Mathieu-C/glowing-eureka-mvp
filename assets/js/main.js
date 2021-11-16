@@ -1,4 +1,4 @@
-const API_ROOT = "http://161.35.3.59:3000";
+const API_ROOT = "http://localhost:3000";
 
 const form = document.getElementById("rating-form");
 
